@@ -1,5 +1,6 @@
 package ie.atu.week4;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class PersonController {
     }
 
     @PostMapping("/addPerson")
-    public List<Person> addPersons(@RequestBody Person person){
+    public List<Person> addPersons(@Valid @RequestBody Person person){
         personList.add(person);
         return personList;
     }
